@@ -11,10 +11,14 @@
             "id": "e43854ab086bef76",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Fedora/Fix Spotify on Fedora.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Fix Spotify on Fedora"
             }
           }
         ]
@@ -163,8 +167,8 @@
   },
   "active": "e43854ab086bef76",
   "lastOpenFiles": [
-    "Fedora/Fix Spotify on Fedora.md",
     "Fedora/Fedora post installation steps.md",
+    "Fedora/Fix Spotify on Fedora.md",
     "Welcome.md",
     "Fedora"
   ]
