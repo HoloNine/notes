@@ -3,6 +3,17 @@
 ```bash
 sudo dnf update
 ```
+## 2. Update grub resolutin
+```bash
+sudo nano /etc/default/grub
+# Add the lines
+GRUB_GFXMODE=1920x1080
+GRUB_GFXPAYLOAD_LINUX=keep
+```
+Update grub
+```bash
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+```
 
 ## 2. ZSH installation and configuration
 
