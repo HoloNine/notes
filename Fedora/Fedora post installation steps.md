@@ -7,8 +7,9 @@ sudo dnf update
 ```bash
 sudo nano /etc/default/grub
 # Add the lines
-GRUB_GFXMODE=1920x1080
-GRUB_GFXPAYLOAD_LINUX=keep
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+GRUB_TERMINAL_OUTPUT="gfxterm"
+GRUB_GFXMODE=1920x1080x32
 ```
 Update grub
 ```bash
