@@ -192,7 +192,10 @@ sudo touch nodocker
 ```bash
 sudo chcon -Rt svirt_sandbox_file_t ./public
 sudo chown -R $USER:$USER ./public
+# Optional
 chmod -R u+rw ./public
+# or (not recommended)
+chmod -R 777 ./public
 ```
 change user inside container
 ```bash
