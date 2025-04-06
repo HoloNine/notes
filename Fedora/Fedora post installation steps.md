@@ -168,6 +168,16 @@ systemctl --user start podman.socket
 ```bash
 echo 'export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock' >> $HOME/.zshrc
 ```
+### Update containers.conf to hide warnings
+Create your own containers.conf
+```bash
+nano ~/.config/containers/containers.conf
+```
+add:
+```bash
+[engine]
+compose_warning_logs = false
+```
 
 ### 7.4 Install `lazydocker`
 
