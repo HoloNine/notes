@@ -171,6 +171,7 @@ echo 'export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock' >> $HOME/.zsh
 ### Update containers.conf to hide warnings
 Create your own containers.conf
 ```bash
+mkdir -p ~/.config/containers
 nano ~/.config/containers/containers.conf
 ```
 add:
@@ -179,6 +180,11 @@ add:
 compose_warning_logs = false
 ```
 
+Create nodocker file
+```bash
+cd /etc/containers
+sudo touch nodocker
+```
 ### 7.4 Install `lazydocker`
 
 ### 7.3 Take ownership of the project folders (dev env only)
