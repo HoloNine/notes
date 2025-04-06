@@ -141,13 +141,6 @@ Restart the terminal
 ```bash
 composer global require laravel/installer
 ```
-
-### 6.1 Add the Laravel installer to your PATH
-
-```bash
-echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> $HOME/.zshrc
-```
-
 ## 7. Install Docker
 ### 7.1 Install Docker Engine
 ### 7.2 Install Lando 3
