@@ -178,6 +178,12 @@ sudo chcon -Rt svirt_sandbox_file_t ./public
 sudo chown -R $USER:$USER ./public
 chmod -R u+rw ./public
 ```
+change user inside container
+```bash
+podman exec -it wordpress bash
+chown -R www-data:www-data /var/www/html
+exit
+```
 ### 7.4 Add to `wp-config.php`
 ```bash
 define('FS_METHOD', 'direct');
