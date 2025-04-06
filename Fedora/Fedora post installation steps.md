@@ -148,62 +148,7 @@ composer global require laravel/installer
 echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> $HOME/.zshrc
 ```
 
-## 7. Configure `podman`
-
-### 7.1 Install podman and podman-compose
-
-```bash
-sudo dnf install -y podman podman-compose podman-docker
-```
-
-### 7.2 Enable and start the Podman Docker socket
-
-```bash
-systemctl --user enable podman.socket
-systemctl --user start podman.socket
-```
-
-### 7.3 Set the Docker host environment variable (is already in `.zshrc`)
-
-```bash
-echo 'export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock' >> $HOME/.zshrc
-```
-### Update containers.conf to hide warnings
-Create your own containers.conf
-```bash
-mkdir -p ~/.config/containers
-nano ~/.config/containers/containers.conf
-```
-add:
-```bash
-[engine]
-compose_warning_logs = false
-```
-
-Create nodocker file
-```bash
-cd /etc/containers
-sudo touch nodocker
-```
-### 7.4 Install `lazydocker`
-
-### 7.3 Take ownership of the project folders (dev env only)
-
-```bash
-sudo chcon -Rt svirt_sandbox_file_t ./public
-sudo chown -R $USER:$USER ./public
-# Optional
-chmod -R u+rw ./public
-# or (not recommended)
-chmod -R 777 ./public
-```
-change user inside container
-```bash
-podman exec -it wordpress bash
-chown -R www-data:www-data /var/www/html
-exit
-```
-### 7.4 Add to `wp-config.php`
-```bash
-define('FS_METHOD', 'direct');
-```
+## 7. Install Docker
+### 7.1 Install Docker Engine
+### 7.2 Install Lando 3
+### 7.3 Install `lazydocker`
