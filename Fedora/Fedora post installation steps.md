@@ -143,5 +143,8 @@ composer global require laravel/installer
 ```
 ## 7. Install Docker
 ### 7.1 Install Docker Engine
-### 7.2 Install Lando 3
+### 7.2 Install ddev
+```bash
+ddev wp core download
+```
 ### 7.3 Install `lazydocker`
