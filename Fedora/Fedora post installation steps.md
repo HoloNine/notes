@@ -148,3 +148,9 @@ composer global require laravel/installer
 ddev wp core download
 ```
 ### 7.3 Install `lazydocker`
+
+
+Install php
+```bash
+sudo dnf install php
+```
