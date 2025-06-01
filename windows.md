@@ -1,4 +1,4 @@
-# Install Starship
+# Install Starship Windows PowerShell
 1. Open PowerShell as Administrator (very important).
 Run this command to set the execution policy for the current user only:
 ```
@@ -95,4 +95,56 @@ Here's how to apply the `pastel-powerline` preset properly:
 
 You should now see the beautiful `pastel-powerline` prompt next time you open PowerShell or Windows Terminal.
 -------------------------------------------------------
+
+# Install Starship PowerShell 7
+Thanks for the detailed error — this happens when you accidentally **run the `$PROFILE` path as a command**, instead of opening it with an editor.
+
+---
+
+### ✅ Correct way to open (or create) your PowerShell 7 profile
+
+#### 🔁 You're probably doing this (incorrect):
+
+```powershell
+C:\Users\marius\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
+```
+
+Which tries to **run** the file — that’s why you see that error.
+
+---
+
+### ✅ Instead, do this step-by-step:
+
+#### 1. **Create the folder (if missing):**
+
+```powershell
+New-Item -Type Directory -Path (Split-Path -Parent $PROFILE) -Force
+```
+
+#### 2. **Create the profile file:**
+
+```powershell
+New-Item -Path $PROFILE -ItemType File -Force
+```
+
+#### 3. **Open the file in Notepad:**
+
+```powershell
+notepad $PROFILE
+```
+
+#### 4. **Paste this inside the file:**
+
+```powershell
+Invoke-Expression (&starship init powershell)
+```
+
+#### 5. **Save the file and restart PowerShell 7 (`pwsh`)**
+
+You should now see the **Starship pastel powerline prompt** in your PowerShell 7 session.
+
+---
+
+Let me know if you'd like to do this in **WSL Ubuntu** next or set this as default in Windows Terminal.
+
 https://learn.microsoft.com/en-us/windows/wsl/setup/environment
