@@ -96,4 +96,79 @@ Here's how to apply the `pastel-powerline` preset properly:
 You should now see the beautiful `pastel-powerline` prompt next time you open PowerShell or Windows Terminal.
 
 Let me know if you want to customize anything in the prompt (like removing time, changing colors, etc).
+----------------------------------------
+That error means that **the WSL virtualization feature isn't enabled** or **the required Windows services aren’t running**, specifically the **Hyper-V services** needed for WSL 2.
+
+Let’s fix it step by step:
+
+---
+
+## ✅ Fix WSL Error: `HCS_E_SERVICE_NOT_AVAILABLE`
+
+### 1. **Check Windows Version**
+
+WSL 2 requires:
+
+* **Windows 10** (version 2004 or later) with **Build 19041+**
+* **Windows 11** – all versions supported
+
+Check with:
+
+```powershell
+winver
+```
+
+---
+
+### 2. **Enable Required Features**
+
+Open **PowerShell as Administrator** and run:
+
+```powershell
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+
+Optional but recommended (especially for Docker):
+
+```powershell
+dism.exe /online /enable-feature /featurename:HypervisorPlatform /all /norestart
+```
+
+Then **restart your computer**.
+
+---
+
+### 3. **Check BIOS for Virtualization Support**
+
+Make sure the following are **enabled** in BIOS/UEFI:
+
+* **Intel VT-x** or **AMD-V**
+* **Virtualization Technology**
+
+---
+
+### 4. **Reinstall WSL (if needed)**
+
+If it's still not working, try reinstalling WSL:
+
+```powershell
+wsl --unregister Ubuntu
+wsl --uninstall
+wsl --install
+```
+
+---
+
+### 5. **Start Fresh**
+
+After reboot:
+
+```powershell
+wsl --install -d Ubuntu
+```
+
+---
+
+Let me know if you want help setting up **Docker, DDEV, or Node** inside WSL once it’s working.
 
