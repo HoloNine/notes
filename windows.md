@@ -171,4 +171,127 @@ wsl --install -d Ubuntu
 ---
 
 Let me know if you want help setting up **Docker, DDEV, or Node** inside WSL once it’s working.
+-------------------------------------------------------
+Great! Let’s get you started with **WSL (Windows Subsystem for Linux)** in a clean and developer-friendly way.
+
+---
+
+## ✅ Step-by-Step Setup for WSL on Windows
+
+### 1. **Install WSL (if not already installed)**
+
+Open **PowerShell as Administrator** and run:
+
+```powershell
+wsl --install
+```
+
+This installs:
+
+* WSL 2
+* Ubuntu (by default)
+* Required components
+
+> ⚠️ If you already have WSL installed, run `wsl --list --verbose` to check.
+
+---
+
+### 2. **Set WSL 2 as Default**
+
+```powershell
+wsl --set-default-version 2
+```
+
+---
+
+### 3. **Install a Linux Distro (if needed)**
+
+If Ubuntu isn't installed yet:
+
+```powershell
+wsl --install -d Ubuntu
+```
+
+Or list available distros:
+
+```powershell
+wsl --list --online
+```
+
+---
+
+### 4. **Launch WSL**
+
+Just type:
+
+```powershell
+wsl
+```
+
+or
+
+```powershell
+wsl -d Ubuntu
+```
+
+It will open a Linux terminal where you can:
+
+* Use bash/zsh
+* Install packages (`apt install`)
+* Use Git, Node, Python, Docker, etc.
+
+---
+
+### 5. **Set Your Default User (Optional)**
+
+To avoid typing your password every time, inside WSL:
+
+```bash
+sudo visudo
+```
+
+And add this line at the end:
+
+```bash
+yourusername ALL=(ALL) NOPASSWD:ALL
+```
+
+---
+
+### 6. **Install Useful Packages**
+
+Inside WSL:
+
+```bash
+sudo apt update && sudo apt upgrade
+sudo apt install build-essential git curl zsh
+```
+
+---
+
+## 🧠 Optional: Developer Tools
+
+* **Starship in WSL:**
+
+  ```bash
+  curl -sS https://starship.rs/install.sh | sh
+  echo 'eval "$(starship init bash)"' >> ~/.bashrc
+  ```
+
+* **Node.js & npm:**
+
+  ```bash
+  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+  sudo apt install -y nodejs
+  ```
+
+* **Python:**
+
+  ```bash
+  sudo apt install python3 python3-pip
+  ```
+
+---
+
+Would you like to also set up **DDEV**, **Docker**, or **React** apps inside WSL next?
 
