@@ -51,3 +51,49 @@ Here’s how you can do it:
 7. Restart your terminal to see Starship in action.
 
 Let me know if you also want to customize the Starship prompt or change the font to a Nerd Font like JetBrains Mono.
+
+
+Great! Since you're on **Windows**, the path `~/.config/starship.toml` translates to:
+
+```
+C:\Users\<YourUsername>\.config\starship.toml
+```
+
+Here's how to apply the `pastel-powerline` preset properly:
+
+---
+
+### ✅ Step-by-step to apply `pastel-powerline` preset for Starship on Windows:
+
+1. **Create the config folder (if it doesn’t exist):**
+
+   Run this in PowerShell:
+
+   ```powershell
+   New-Item -ItemType Directory -Path "$HOME\.config" -Force
+   ```
+
+2. **Generate and save the preset:**
+
+   Run this to generate the preset and save it:
+
+   ```powershell
+   starship preset pastel-powerline -o "$HOME\.config\starship.toml"
+   ```
+
+3. **(Optional) Edit your config:**
+
+   You can open and tweak the config with:
+
+   ```powershell
+   notepad "$HOME\.config\starship.toml"
+   ```
+
+4. **Restart your terminal** to apply the changes.
+
+---
+
+You should now see the beautiful `pastel-powerline` prompt next time you open PowerShell or Windows Terminal.
+
+Let me know if you want to customize anything in the prompt (like removing time, changing colors, etc).
+
