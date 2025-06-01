@@ -294,4 +294,56 @@ sudo apt install build-essential git curl zsh
 ---
 
 Would you like to also set up **DDEV**, **Docker**, or **React** apps inside WSL next?
+------------------------------------
+Perfect — that’s the cleanest and safest approach. Just move **Ubuntu only** to your `D:` drive and leave Docker Desktop on `C:` (since it's more fragile and harder to relocate).
+
+---
+
+## ✅ Recap: Only Move Ubuntu WSL to D:\\
+
+### 1. **Export Ubuntu**
+
+```powershell
+wsl --export Ubuntu D:\WSL\ubuntu.tar
+```
+
+### 2. **Unregister Ubuntu**
+
+```powershell
+wsl --unregister Ubuntu
+```
+
+### 3. **Re-import Ubuntu to D:**
+
+```powershell
+wsl --import Ubuntu D:\WSL\Ubuntu D:\WSL\ubuntu.tar --version 2
+```
+
+### 4. **(Optional) Set Ubuntu as Default**
+
+```powershell
+wsl --set-default Ubuntu
+```
+
+### 5. **Verify**
+
+```powershell
+wsl -l -v
+```
+
+Your `Ubuntu` should now be stored entirely in:
+
+```
+D:\WSL\Ubuntu
+```
+
+---
+
+Docker will continue using `docker-desktop` on C:, and Ubuntu development can live on D:.
+
+Let me know if you’d like to:
+
+* Mount shared project folders from D:
+* Use Git, Node, PHP, Python, etc. inside Ubuntu
+* Set up a clean folder structure for dev projects in WSL
 
