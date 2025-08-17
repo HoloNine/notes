@@ -4,12 +4,15 @@ sudo apt update
 sudo apt upgrade -y
 ```
 
+## App center updates
+## Install JetBrains Fonts
+
 # Install curl
 ```bash
 sudo apt install curl
 ```
 
-# Install JetBrains Fonts
+
 
 # Install starship
 
@@ -55,3 +58,16 @@ gh auth status
 
 # Install nodeJS
 # Install PHP, Composer and Laravel Installer
+
+
+7. Install Docker
+7.1 Install Docker Engine
+7.2 Install ddev
+
+ddev wp core download
+
+7.3 Install lazydocker
+
+Install php
+
+sudo dnf install php
