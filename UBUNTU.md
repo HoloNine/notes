@@ -1,18 +1,19 @@
 # Update
+
 ```bash
 sudo apt update
 sudo apt upgrade -y
 ```
 
 ## App center updates
+
 ## Install JetBrains Fonts
 
 # Install curl
+
 ```bash
 sudo apt install curl
 ```
-
-
 
 # Install starship
 
@@ -27,7 +28,7 @@ git config --global user.email "your.email@example.com"
 git config --global init.defaultBranch main
 
 4. Install and configure Github CLI
-4.1 Installations
+   4.1 Installations
 
 sudo dnf install gh
 
@@ -57,12 +58,12 @@ ssh -T git@github.com
 gh auth status
 
 # Install nodeJS
+
 # Install PHP, Composer and Laravel Installer
 
-
 7. Install Docker
-7.1 Install Docker Engine
-7.2 Install ddev
+   7.1 Install Docker Engine
+   7.2 Install ddev
 
 ddev wp core download
 
