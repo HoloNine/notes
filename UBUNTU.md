@@ -54,4 +54,4 @@ ssh -T git@github.com
 gh auth status
 
 # Install nodeJS
-
+# Install PHP, Composer and Laravel Installer
