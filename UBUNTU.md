@@ -15,3 +15,4 @@ sudo apt install curl
 
 # Config Straship
 
+# Install GitHub CLI 
