@@ -107,6 +107,11 @@ Verify:
 starship --version
 ```
 
+Preset
+```
+starship preset pastel-powerline -o ~/.config/starship.toml
+```
+
 ---
 
 ## 5) Install Docker Engine only
