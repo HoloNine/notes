@@ -144,6 +144,8 @@ docker --version
 docker run --rm hello-world
 ```
 
+Install LazyDocker
+
 ---
 
 ## 6) Install DDEV
