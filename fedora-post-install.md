@@ -268,4 +268,5 @@ code --version
 ## 11 Guild wars on Steam
 ```
 -provider Portal
+(sleep 15 && STEAM_COMPAT_DATA_PATH="/run/media/holonine/store/SteamLibrary/steamapps/compatdata/29720" "$HOME/.local/share/Steam/steamapps/common/Proton - Experimental/proton" run "/run/media/holonine/store/SteamLibrary/steamapps/compatdata/29720/pfx/drive_c/users/steamuser/Documents/GWToolboxpp/GWToolbox.exe") & %command% -provider Portal
 ```
